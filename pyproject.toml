@@ -1,0 +1,27 @@
+[project]
+name = "template-python-module"
+requires-python = ">=3.9,<3.11"
+dynamic = ["version"]
+dependencies = [
+  # datascience basics
+  "numpy>=1.22.3,<2",
+  "pandas>=1.3.3,<2",
+  "scikit-learn>=1.0.1,<2",
+
+  "loguru>=0.5.3,<1", # Dont use logging
+  "packaging>=21.0,<22",
+]
+
+# -----------------------------------------------
+# Development tools
+# -----------------------------------------------
+[tool.black]
+line-length = 120
+
+[tool.isort]
+# Isort config preconized not to interfere with `black`
+profile = "black"
+line_length = 120
+
+[tool.mypy]
+ignore_missing_imports = true
