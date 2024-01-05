@@ -7,7 +7,7 @@ MODULE_NAME = "template_python"
 
 nox.options.reuse_existing_virtualenvs = True
 nox.options.error_on_missing_interpreters = True
-PYTHON_VERSIONS: List[str] = ["3.10"]
+PYTHON_VERSIONS: List[str] = ["3.9"]
 
 @nox.session(venv_backend="virtualenv", python=PYTHON_VERSIONS[-1])
 def dev(session):
