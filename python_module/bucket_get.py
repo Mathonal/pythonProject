@@ -15,8 +15,10 @@ def get_bucket_uri_by_keyword(keyword: str) -> List[str]:
     
     return filtered_bucket_names
     
-bucket_name = get_bucket_uri_by_keyword("sagemaker-us")
-print(bucket_name)
+bucket_name_list = get_bucket_uri_by_keyword("sagemaker-us")
+print(bucket_name_list)
+bucket = bucket_name_list[0]
+print(bucket)
 
 s3_client = boto3.client("s3")
-s3_client.download_file(bucket_name, 'meuh.txt', 'meuh.txt')
+s3_client.download_file(bucket, 'meuh.txt', 'meuh.txt')
